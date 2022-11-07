@@ -17,6 +17,12 @@ body {
     height: 65vh;
 }
 
+.program-title {
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.8em;
+}
+
 .ip-address-input-field {
     height: 40px;
     width: 200px;
