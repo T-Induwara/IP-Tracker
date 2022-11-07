@@ -4,7 +4,8 @@ let locIcon = L.icon({
     iconUrl: "/images/icon-location.svg",//To change the default leaflet js marker icon
 })
 var mapOptions = {
-    zoomControl: false
+    zoomControl: false,
+    zIndex: 5
 }
 var map = L.map('map', mapOptions).setView([6.9271, 79.8612], 16);
 

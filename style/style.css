@@ -67,6 +67,24 @@ body {
     vertical-align: middle;
 }
 
+.ip-address-details {
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column;
+    margin-top: 40px;
+    text-align: center;
+    z-index: 10000 !important;
+}
+
+.desc-ip-add,
+.desc-location,
+.desc-tz,
+.desc-isp {
+    padding-top: 20px;
+}
+
+
+
 @media only screen and (min-width: 768px) {}
 
 @media only screen and (min-width: 1280px) {}
