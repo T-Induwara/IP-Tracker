@@ -4,6 +4,24 @@ body {
 }
 
 /*font-family: 'Rubik', sans-serif;*/
+/*CSS part for mobile*/
+.top-bg {
+    background-image: url("/images/pattern-bg.png");
+    height: 35vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#map {
+    width: 100%;
+    height: 65vh;
+}
+
+.ip-address-input-field {
+    height: 40px;
+    width: 200px;
+    background-color: antiquewhite;
+}
 
 @media only screen and (min-width: 768px) {}
 
@@ -11,7 +29,6 @@ body {
 
 @media only screen and (min-width: 1440px) {
     .top-bg {
-        background-image: url("/images/pattern-bg.png");
         height: 40vh;
         background-repeat: no-repeat;
         background-size: cover;
