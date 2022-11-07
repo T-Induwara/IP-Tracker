@@ -5,7 +5,6 @@ let locIcon = L.icon({
 })
 var mapOptions = {
     zoomControl: false,
-    zIndex: 5
 }
 var map = L.map('map', mapOptions).setView([6.9271, 79.8612], 16);
 
