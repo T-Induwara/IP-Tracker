@@ -213,7 +213,7 @@ body {
 
 @media only screen and (min-width: 1280px) {
     ::placeholder {
-        font-size: 1.1em !important;
+        font-size: 0.9em !important;
     }
 
     .top-bg {
@@ -231,7 +231,7 @@ body {
 
     .program-title {
         font-size: 1.8em;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .outer-ip {
@@ -271,12 +271,21 @@ body {
     }
 
     .ip-address-details {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-evenly;
         margin-top: 40px;
         text-align: center;
         position: relative;
         z-index: 1000 !important;
-        padding: 20px 0px 20px 0px;
+        padding: 30px 0px 30px 0px;
+    }
+
+    .desc-location,
+    .desc-tz,
+    .desc-isp {
+        border-left: solid hsl(0, 0%, 59%) 1px !important;
+        padding-left: 5rem;
+        /*lines middle of each column in desktop modes*/
     }
 
     .desc-ip-add,
@@ -313,5 +322,13 @@ body {
         height: 40px;
         width: 200px;
         background-color: antiquewhite;
+    }
+
+    .desc-location,
+    .desc-tz,
+    .desc-isp {
+        border-left: solid hsl(0, 0%, 59%) 1px !important;
+        padding-left: 6rem;
+        /*lines middle of each column in desktop modes*/
     }
 }
