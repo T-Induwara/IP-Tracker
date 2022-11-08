@@ -211,7 +211,96 @@ body {
     }
 }
 
-@media only screen and (min-width: 1280px) {}
+@media only screen and (min-width: 1280px) {
+    ::placeholder {
+        font-size: 1.1em !important;
+    }
+
+    .top-bg {
+        height: 35vh;
+        background-position: 56% 100%;
+    }
+
+    #map {
+        height: 65vh;
+    }
+
+    .top-txt-section {
+        padding: 0px 65px 0px 65px !important;
+    }
+
+    .program-title {
+        font-size: 1.8em;
+        margin-top: 3rem;
+    }
+
+    .outer-ip {
+        width: 100%;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .ip-address-input-field {
+        width: 400px;
+        height: 50px;
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    .ip-add-field {
+        width: 82%;
+    }
+
+    #ip-add {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px 0px 0px 10px;
+        padding-left: 20px;
+    }
+
+    .ip-comm-btn {
+        width: 18%;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .ip-comm-btn img {
+        vertical-align: middle;
+    }
+
+    .ip-address-details {
+        flex-direction: column;
+        margin-top: 40px;
+        text-align: center;
+        position: relative;
+        z-index: 1000 !important;
+        padding: 20px 0px 20px 0px;
+    }
+
+    .desc-ip-add,
+    .desc-location,
+    .desc-tz,
+    .desc-isp {
+        padding-top: 10px;
+    }
+
+    .desc-ip-add h5,
+    .desc-location h5,
+    .desc-tz h5,
+    .desc-isp h5 {
+        font-size: 10px !important;
+        letter-spacing: 2px;
+    }
+
+    .desc-ip-add h4,
+    .desc-location h4,
+    .desc-tz h4,
+    .desc-isp h4 {
+        font-size: 20px !important;
+    }
+}
 
 @media only screen and (min-width: 1440px) {
     .top-bg {
