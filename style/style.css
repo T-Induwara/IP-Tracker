@@ -86,6 +86,8 @@ body {
     position: relative;
     z-index: 1000 !important;
     padding: 20px 0px 20px 0px;
+    box-shadow: rgba(57, 57, 57, 0.273) 0px 10px 20px;
+    /*for drop shadow of info window*/
 }
 
 .desc-ip-add,
@@ -122,7 +124,7 @@ body {
     ::placeholder {
         opacity: 70%;
         font-family: 'Rubik', sans-serif;
-        font-size: 0.9em !important;
+        font-size: 1.1em !important;
     }
 
     .top-bg {
@@ -139,21 +141,29 @@ body {
     }
 
     .top-txt-section {
-        padding: 0px 25px 0px 25px !important;
+        padding: 0px 65px 0px 65px !important;
     }
 
     .program-title {
         color: white;
         font-family: 'Rubik', sans-serif;
         font-size: 1.8em;
-        margin-top: 1rem;
+        margin-top: 3rem;
+    }
+
+    .outer-ip {
+        width: 100%;
+        text-align: center;
+        margin-top: 2rem;
     }
 
     .ip-address-input-field {
+        width: 400px;
         height: 50px;
         background-color: antiquewhite;
         border-radius: 10px;
-        margin-top: 2rem;
+        display: inline-block;
+        margin: 0 auto;
     }
 
     .ip-add-field {
