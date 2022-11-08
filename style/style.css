@@ -3,6 +3,12 @@ body {
     padding: 0px;
 }
 
+::placeholder {
+    opacity: 70%;
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.9em !important;
+}
+
 /*font-family: 'Rubik', sans-serif;*/
 /*CSS part for mobile*/
 .top-bg {
