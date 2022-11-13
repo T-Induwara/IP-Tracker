@@ -3,9 +3,6 @@ console.log("Script loaded");
 //variable declarations page info containers
 var apikey = 'at_tLaXMmat8Wh7kg4yNffBOfDX5jrv3';
 
-//var ip = "123.231.111.170";
-var api_key = "at_tLaXMmat8Wh7kg4yNffBOfDX5jrv3";
-
 var ipAdd = document.getElementById("ip-add");
 let ipBtn = document.getElementById("ip-comm-btn");
 
