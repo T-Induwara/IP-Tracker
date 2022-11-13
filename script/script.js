@@ -9,20 +9,27 @@ var api_key = "at_tLaXMmat8Wh7kg4yNffBOfDX5jrv3";
 var ipAdd = document.getElementById("ip-add");
 let ipBtn = document.getElementById("ip-comm-btn");
 
-let ipOutAdd = document.getElementById("desc-ip").innerHTML;
-let ipOutLoc = document.getElementById("desc-loc").innerHTML;
-let ipOutTz = document.getElementById("desc-tz").innerHTML;
-let ipOutIsp = document.getElementById("desc-isp").innerHTML;
+let ipOutAdd = document.getElementById("desc-ip");
+let ipOutLoc = document.getElementById("desc-loc");
+let ipOutTz = document.getElementById("desc-tz");
+let ipOutIsp = document.getElementById("desc-isp");
 
 ipBtn.addEventListener("click", function () {
     $.ajax({
         url: "https://geo.ipify.org/api/v1",
         data: { apiKey: apikey, ipAddress: ipAdd.value },
         success: function (data) {
-            console.log("GG");
-            $("body").append("<pre>" + JSON.stringify(data, "", 2) + "</pre>");
+            console.log(JSON.stringify(data, "", 2));
+
+            ipOutAdd.innerHTML = data.ip;
+            ipOutLoc.innerHTML = data.location.city + ", " + data.location.region + ", " + data.location.country;
+            ipOutTz.innerHTML = data.location.timezone;
+            ipOutIsp.innerHTML = data.isp;
+
+            console.log("received json data");
         }
     });
+
 });
 
 let locIcon = L.icon({
