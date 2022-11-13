@@ -1,6 +1,8 @@
 console.log("Script loaded");
 
 //variable declarations page info containers
+var apikay = 'at_tLaXMmat8Wh7kg4yNffBOfDX5jrv3';
+
 var ipAdd = document.getElementById("ip-add");
 let ipBtn = document.getElementById("ip-comm-btn");
 
@@ -10,7 +12,12 @@ let ipOutTz = document.getElementById("desc-tz").innerHTML;
 let ipOutIsp = document.getElementById("desc-isp").innerHTML;
 
 ipBtn.addEventListener("click", function () {
-    console.log(ipAdd.value);
+    if (ipAdd.value == "") {
+        alert("Please enter an IP address!!!");
+    }
+    else {
+        console.log(ipAdd.value);
+    }
 });
 
 let locIcon = L.icon({
