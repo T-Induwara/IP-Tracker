@@ -30,7 +30,6 @@ $.getJSON("https://api.ipify.org?format=json", function (data) {//This function 
 
             console.log("received json data");
 
-
             map.setView([data.location.lat, data.location.lng]);
             L.marker([data.location.lat, data.location.lng], { icon: locIcon }).addTo(map);
         }
@@ -38,24 +37,29 @@ $.getJSON("https://api.ipify.org?format=json", function (data) {//This function 
 })
 
 ipBtn.addEventListener("click", function () {//This event will trigger after user clicks the submit button
-    $.ajax({
-        url: "https://geo.ipify.org/api/v1",
-        data: { apiKey: apikey, ipAddress: ipAdd.value },
-        success: function (data) {
-            console.log(JSON.stringify(data, "", 2));
+    if (ipAdd == "") {
+        alert("Please enter an IP Address!!");
+    }
+    else {
+        $.ajax({
+            url: "https://geo.ipify.org/api/v1",
+            data: { apiKey: apikey, ipAddress: ipAdd.value },
+            success: function (data) {
+                console.log(JSON.stringify(data, "", 2));
 
-            ipOutAdd.innerHTML = data.ip;
-            ipOutLoc.innerHTML = data.location.city + ", " + data.location.region + ", " + data.location.country;
-            ipOutTz.innerHTML = data.location.timezone;
-            ipOutIsp.innerHTML = data.isp;
+                ipOutAdd.innerHTML = data.ip;
+                ipOutLoc.innerHTML = data.location.city + ", " + data.location.region + ", " + data.location.country;
+                ipOutTz.innerHTML = data.location.timezone;
+                ipOutIsp.innerHTML = data.isp;
 
-            console.log("received json data");
+                console.log("received json data");
 
 
-            map.setView([data.location.lat, data.location.lng]);
-            L.marker([data.location.lat, data.location.lng], { icon: locIcon }).addTo(map);
-        }
-    });
+                map.setView([data.location.lat, data.location.lng]);
+                L.marker([data.location.lat, data.location.lng], { icon: locIcon }).addTo(map);
+            }
+        });
+    }
 
 });
 
