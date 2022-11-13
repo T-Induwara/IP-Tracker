@@ -21,14 +21,12 @@ $.getJSON("https://api.ipify.org?format=json", function (data) {//This function 
         url: "https://geo.ipify.org/api/v1",
         data: { apiKey: apikey, ipAddress: ipAdd.value },
         success: function (data) {
-            console.log(JSON.stringify(data, "", 2));
+            //console.log(JSON.stringify(data, "", 2));
 
             ipOutAdd.innerHTML = data.ip;
             ipOutLoc.innerHTML = data.location.city + ", " + data.location.region + ", " + data.location.country;
             ipOutTz.innerHTML = data.location.timezone;
             ipOutIsp.innerHTML = data.isp;
-
-            console.log("received json data");
 
             map.setView([data.location.lat, data.location.lng]);
             L.marker([data.location.lat, data.location.lng], { icon: locIcon }).addTo(map);
@@ -45,15 +43,12 @@ ipBtn.addEventListener("click", function () {//This event will trigger after use
             url: "https://geo.ipify.org/api/v1",
             data: { apiKey: apikey, ipAddress: ipAdd.value },
             success: function (data) {
-                console.log(JSON.stringify(data, "", 2));
+                //console.log(JSON.stringify(data, "", 2));
 
                 ipOutAdd.innerHTML = data.ip;
                 ipOutLoc.innerHTML = data.location.city + ", " + data.location.region + ", " + data.location.country;
                 ipOutTz.innerHTML = data.location.timezone;
                 ipOutIsp.innerHTML = data.isp;
-
-                console.log("received json data");
-
 
                 map.setView([data.location.lat, data.location.lng]);
                 L.marker([data.location.lat, data.location.lng], { icon: locIcon }).addTo(map);
@@ -69,17 +64,6 @@ let locIcon = L.icon({
 var mapOptions = {
     zoomControl: false,
 }
-
-/*var map = L.map('map', mapOptions).setView([6.9271, 79.8612], 16);
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-L.marker([6.9271, 79.8612], { icon: locIcon }).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .closePopup();
-*/
 
 var map = L.map('map', {
     'center': [6.9271, 79.8612],
