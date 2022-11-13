@@ -53,37 +53,66 @@ Users should be able to:
 
 When developing this IP Address Tracker website project, these are new things, I have learned.
 
--How e-commerce website's frontend works
--Also, this is my very first time that using **UI Popups** instead of **Browser alerts**. The advantage of UI Popups instead of alrt is that UI Popup far more attractive than regular browser alert. I used UI Popups to indicate following scenarios.
-* When user clicking **Add to cart** button without choosing product count.
-* When user deducting product counter value **Less than 0**.
+-How website frontend connect with an API service.
+-This is my very first experience with Leaflet JS and Ipify Geolocation API. So, the first thing I leaned during this project period is the ease of the Leaflet JS library rather than using Google Maps. Correct me if I'm wrong. But I think for small purposes related projects, Leaflet JS is far more suitable option.
 
--After viewing a Popup, I used **setTimeOut** function to automatically hide the popups after certain amount of time. Code snippet is right below.
-```JS
-setTimeout(() => {
-    quantPop.style.display = 'none';
-    quantPop.addClass("popup-hide");
-}, 2000);
+-During this project, I noticed something unusual about innerHTML. I have added some code snippets below for anyone who reads this.
+```JS example 1
+var ipOutAdd = document.getElementById("ip-add").innerHTML;
+
+function(){
+  $.ajax({
+            url: "https://geo.ipify.org/api/v1",
+            data: { apiKey: apikey, ipAddress: ipAdd.value },
+            success: function (data) {
+
+                ipOutAdd = data.ip;
+
+                map.setView([data.location.lat, data.location.lng]);
+                L.marker([data.location.lat, data.location.lng], { icon: locIcon }).addTo(map);
+            }
+        });
+}
 ```
--Most importantly, this my very first project that I used my own method for navigating image slideshow. It's a bit repetative and entry level method but I intend to modify the code in future.
+
+**Explanation** : Declaring variable with innerHTML property, doesn't let change the value of the HTML tag from inside the function. Insted of that, I changed the innerHTML property position & it worked like a charm.
+
+```JS example 2
+var ipOutAdd = document.getElementById("ip-add");
+
+function(){
+  $.ajax({
+            url: "https://geo.ipify.org/api/v1",
+            data: { apiKey: apikey, ipAddress: ipAdd.value },
+            success: function (data) {
+
+                ipOutAdd.innerHTML = data.ip;
+
+                map.setView([data.location.lat, data.location.lng]);
+                L.marker([data.location.lat, data.location.lng], { icon: locIcon }).addTo(map);
+            }
+        });
+}
+```
+**Explanation** : Adding innerHTML property inside the function with declared variable is the solution for that issue. I don't know the exact reason. As far as I know, above both code snippets are to implement the same functionality.
+
 
 ### Continued development
 
-As I mentioned earlier, the main point I should improve is the **Slider navigation** JS code segment. Apart from that following things should improve too.
-* I have used some CSS media queries that usually not using when developing a website. The reason to do that is, I noticed some UI errors on external monitors with 1920px X 1080px displays. In order to resolve those I added **min-width=1900px** media query.
+- Currently, this program accepts IP Addresses only. So, I need to add Domain name functionality too and will be done in future.
 
 ### Useful resources
 
-- [Borislav Hadzhiev](https://bobbyhadz.com/blog/javascript-hide-element-after-few-seconds) - This helped me for showing the way to hide the popups automatically.
-- [Stack Overflow](https://stackoverflow.com/questions/820951/hide-div-after-a-few-seconds) - I followed this thread also. This is the jQuery version of above **setTimeOut** function.
+- [Siphiwo Julayi | YouTube Video](https://youtu.be/vidOkPR75qE) - I found this YouTube video when trying to find some help through the internet.
+- [Siphiwo Julayi | GitHub Repo](https://github.com/Siphiwo/ip-address-tracker-tutorial) - This is the GitHub repo of the above YouTube video. I didn't copy his code but his code helped me a lot when coding the API calling section.
 
 ## Author
 
-- Website - [SLGPLAY](https://www.slgplay.net)
+- Website - [TIDEV](https://www.tidev.one)
 - Frontend Mentor - [@T-Induwara](https://www.frontendmentor.io/profile/T-Induwara)
 - Github - [@T-Induwara](https://github.com/T-Induwara)
 - LinkedIn - [@t-induwara](https://www.linkedin.com/in/t-induwara/)
 
 ## Acknowledgments
 
-I want to give thanks specially to [Borislav Hadzhiev](https://bobbyhadz.com/blog/javascript-hide-element-after-few-seconds) website for helping me to get the code snippet that used to create automatically popup hiding effect.
+I want to give thanks specially to [Siphiwo Julayi | GitHub Repo](https://github.com/Siphiwo/ip-address-tracker-tutorial) for showing me the write way to call API and data retrival methods.
