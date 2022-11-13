@@ -283,8 +283,8 @@ body {
     .desc-location,
     .desc-tz,
     .desc-isp {
-        border-left: solid hsl(0, 0%, 59%) 1px !important;
-        padding-left: 5rem;
+        border-left: solid hsla(0, 0%, 59%, 0.407) 2px !important;
+        padding-left: 4rem;
         /*lines middle of each column in desktop modes*/
     }
 
@@ -327,7 +327,7 @@ body {
     .outer-ip {
         width: 100%;
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .ip-address-input-field {
@@ -363,7 +363,7 @@ body {
     .desc-location,
     .desc-tz,
     .desc-isp {
-        border-left: solid hsl(0, 0%, 59%) 1px !important;
+        border-left: solid hsla(0, 0%, 59%, 0.407) 2px !important;
         padding-left: 6rem;
         /*lines middle of each column in desktop modes*/
     }
@@ -373,6 +373,12 @@ body {
     .ip-address-details {
         margin-top: 6rem;
         padding: 50px 0px 50px 0px;
+    }
+
+    .outer-ip {
+        width: 100%;
+        text-align: center;
+        margin-top: 3rem;
     }
 
 }
