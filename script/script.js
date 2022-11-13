@@ -14,7 +14,30 @@ let ipOutLoc = document.getElementById("desc-loc");
 let ipOutTz = document.getElementById("desc-tz");
 let ipOutIsp = document.getElementById("desc-isp");
 
-ipBtn.addEventListener("click", function () {
+$.getJSON("https://api.ipify.org?format=json", function (data) {//This function automatically shows all the infomation related to the IP address of the user.
+    var currentIP = data.ip;
+
+    $.ajax({
+        url: "https://geo.ipify.org/api/v1",
+        data: { apiKey: apikey, ipAddress: ipAdd.value },
+        success: function (data) {
+            console.log(JSON.stringify(data, "", 2));
+
+            ipOutAdd.innerHTML = data.ip;
+            ipOutLoc.innerHTML = data.location.city + ", " + data.location.region + ", " + data.location.country;
+            ipOutTz.innerHTML = data.location.timezone;
+            ipOutIsp.innerHTML = data.isp;
+
+            console.log("received json data");
+
+
+            map.setView([data.location.lat, data.location.lng]);
+            L.marker([data.location.lat, data.location.lng], { icon: locIcon }).addTo(map);
+        }
+    });
+})
+
+ipBtn.addEventListener("click", function () {//This event will trigger after user clicks the submit button
     $.ajax({
         url: "https://geo.ipify.org/api/v1",
         data: { apiKey: apikey, ipAddress: ipAdd.value },
