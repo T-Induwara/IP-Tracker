@@ -27,6 +27,10 @@ ipBtn.addEventListener("click", function () {
             ipOutIsp.innerHTML = data.isp;
 
             console.log("received json data");
+
+
+            map.setView([data.location.lat, data.location.lng]);
+            L.marker([data.location.lat, data.location.lng], { icon: locIcon }).addTo(map);
         }
     });
 
@@ -50,14 +54,13 @@ L.marker([6.9271, 79.8612], { icon: locIcon }).addTo(map)
     .closePopup();
 */
 
-const map = L.map('map', {
+var map = L.map('map', {
     'center': [6.9271, 79.8612],
     'zoom': 16,
     'zoomControl': false,//Zoom control buttons disabled
-    'dragging': false,//Map movement by fingers or mouse disabled
-    'scrollWheelZoom': false,
+    //'dragging': false,//Map movement by fingers or mouse enabled
+    //'scrollWheelZoom': false,//Map scrolling by mouse enabled
     'layers': [L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     })]
 })
-L.marker([6.9271, 79.8612], { icon: locIcon }).addTo(map);
