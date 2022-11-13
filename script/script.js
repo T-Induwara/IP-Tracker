@@ -32,8 +32,9 @@ L.marker([6.9271, 79.8612], { icon: locIcon }).addTo(map)
 */
 
 const map = L.map('map', {
-    'center': [42, 42],
+    'center': [6.9271, 79.8612],
     'zoom': 16,
+    'zoomControl': false,
     'layers': [L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     })]
